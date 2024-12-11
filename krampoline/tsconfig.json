@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./",
+    "composite": false,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": false,
+    "isolatedModules": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES5",
+    "jsx": "react-jsx",
+    "lib": ["dom", "es6"],
+    "baseUrl": ".",
+    "allowJs": true,
+    "removeComments": true,
+    "preserveSymlinks": true,
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@pages/*": ["src/pages/*"],
+      "@constants/*": ["src/constants/*"],
+      "@utils/*": ["src/utils/*"],
+      "@apis/*": ["src/apis/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
