@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { instance } from "@apis/axios";
-import Frame from "@components/Frame/template";
+import Layout from "@components/Layout/template";
 
 function Test() {
   const [apiTest, setApiTest] = useState(false);
@@ -25,7 +25,7 @@ function Test() {
   };
 
   return (
-    <Frame>
+    <>
       <div>Hello 이은옹</div>
       <div>
         <button onClick={handleApiOnclick}>API TEST</button>
@@ -35,7 +35,7 @@ function Test() {
         <button onClick={handleDbOnClick}>DB TEST</button>
         <div>{dbTest ? "CONNECT" : "NOT YET"}</div>
       </div>
-    </Frame>
+    </>
   );
 }
 
