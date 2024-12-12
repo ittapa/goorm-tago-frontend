@@ -1,16 +1,29 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import Layout from "@components/Layout/template";
-import Test from "./pages/Test";
+import Layout from "@components/common/Layout/template";
+import Main from "@pages/Main";
+import Schedule from "@pages/Schedule";
+import Reserve from "@pages/Reserve";
+import Recommend from "@pages/Recommend";
+import Confirm from "@pages/Confirm";
+
+import Test from "@pages/Test";
+import Complete from "@pages/Complete";
 
 function App() {
   return (
-    <Layout>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Layout>
         <Routes>
-          <Route path="/" element={<Test />} />
+          <Route path="/" element={<Main />} />
+          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/reserve" element={<Reserve />} />
+          <Route path="/recommend" element={<Recommend />} />
+          <Route path="/complete" element={<Complete />} />
+          <Route path="/confirm" element={<Confirm />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
-      </BrowserRouter>
-    </Layout>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
