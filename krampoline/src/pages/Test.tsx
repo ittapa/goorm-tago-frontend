@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { instance } from "@apis/axios";
-import Layout from "@components/Layout/template";
 
 function Test() {
   const [apiTest, setApiTest] = useState(false);
