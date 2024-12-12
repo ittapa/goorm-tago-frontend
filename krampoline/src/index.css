@@ -1,8 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
+/* resetCss */
 html,
 body,
 div,
@@ -127,13 +123,74 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
 #root {
   width: 100%;
+  height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  text-align: center;
-  font-family: "Nanum Gothic", sans-serif;
+  background-color: var(--gray-5);
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+button {
+  flex-shrink: 0;
+  all: unset; /* 모든 기본 스타일 제거 */
+  display: inline-block; /* 기본적으로 레이아웃에 필요한 스타일 */
+  cursor: pointer; /* 클릭 가능한 상태 표시 */
+}
+
+/* 폰트 */
+@font-face {
+  font-family: "PretendardGOV-Bold";
+  font-weight: 700 !important;
+  font-style: normal;
+  src: url("./fonts/PretendardGOV-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "PretendardGOV-SemiBold";
+  font-weight: 600 !important;
+  font-style: normal;
+  src: url("./fonts/PretendardGOV-SemiBold.otf") format("opentype");
+}
+@font-face {
+  font-family: "PretendardGOV-Medium";
+  font-weight: 500 !important;
+  font-style: normal;
+  src: url("./fonts/PretendardGOV-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "PretendardGOV-Regular";
+  font-weight: 400 !important;
+  font-style: normal;
+  src: url("./fonts/PretendardGOV-Regular.otf") format("opentype");
+}
+
+/* 색상 토큰 */
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --primary-5: #eff5ff;
+  --primary-10: #d3e1fb;
+  --primary-20: #a7c4f7;
+  --primary-30: #7ca6f3;
+  --primary-40: #5089ef;
+  --primary-50: #246beb;
+  --primary-60: #1d56bc;
+  --gray-5: #f8f8f8;
+  --gray-10: #f0f0f0;
+  --gray-20: #e4e4e4;
+  --gray-30: #d8d8d8;
+  --gray-40: #c6c6c6;
+  --gray-50: #8e8e8e;
+  --gray-60: #717171;
+  --gray-70: #555555;
+  --gray-90: #1d1d1d;
 }
