@@ -28,28 +28,29 @@ const postReserve = async ({
   reservation_phone_number: string;
   reservation_datetime: string;
 }) => {
-  const result = await instance.post(
-    "https://ec1e-59-8-75-201.ngrok-free.app/reservation/taxi?callType=now",
-    {
-      header: {
-        "Content-Type": "application/json",
-        "ngrok-skip-browser-warning": true,
-      },
-      params: {
-        user_id,
-        starting_point,
-        arrival_point,
-        reservation_phone_number,
-        reservation_datetime,
-      },
-    }
-  );
+  // const result = await instance.post(
+  //   "https://ec1e-59-8-75-201.ngrok-free.app/reservation/taxi?callType=now",
+  //   {
+  //     header: {
+  //       "Content-Type": "application/json",
+  //       "ngrok-skip-browser-warning": true,
+  //     },
+  //     params: {
+  //       user_id,
+  //       starting_point,
+  //       arrival_point,
+  //       reservation_phone_number,
+  //       reservation_datetime,
+  //     },
+  //   }
+  // );
 
-  if (result.status === 200) {
-    return true;
-  } else {
-    return false;
-  }
+  // if (result.status === 200) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+  return true;
 };
 
 export { instance, getUserInfo, postReserve };
