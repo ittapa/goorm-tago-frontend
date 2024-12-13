@@ -94,7 +94,7 @@ function Confirm() {
             출발 시간
           </Font>
           <Font align="center" size={FONT_STR.M18}>
-            {"12.13(금) 12:00"}
+            {"12.14(토) 12:00"}
           </Font>
         </S.Reserve>
         <S.Reserve>
