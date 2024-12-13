@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import DatePicker from "../DatePicker/template";
@@ -6,6 +6,7 @@ import { Font, FONT_STR } from "@components/common/Font/template";
 import Button from "@components/common/Button/template";
 import CheckActive from "@assets/svgs/CheckActive";
 import CheckDisable from "@assets/svgs/CheckDisable";
+import { speakText, stopText } from "@utils/textToSpeach";
 
 function SelectDate({ dest }: { dest: string }) {
   const navigate = useNavigate();
@@ -20,6 +21,13 @@ function SelectDate({ dest }: { dest: string }) {
   const handleNext = (dest: string) => {
     navigate(`/recommend?dest=${dest}&type=${selectedValue}`);
   };
+
+  useEffect(() => {
+    speakText("출발 날짜를 선택해주세요.");
+    return () => {
+      stopText();
+    };
+  }, []);
 
   return (
     <S.Wrapper>

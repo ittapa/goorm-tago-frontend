@@ -18,7 +18,7 @@ function SelectTime({ dest }: { dest: string }) {
         size={{ width: "full", height: "64px" }}
         handleClickButton={handleRouteToRecommend}
       >
-        선택 완료 다음으로 넘어가귀
+        선택 완료
       </Button>
     </S.Wrapper>
   );

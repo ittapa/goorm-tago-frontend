@@ -6,8 +6,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
   max-width: 390px;
   background-color: var(--white);
   color: var(--black);

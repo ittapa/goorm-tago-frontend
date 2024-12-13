@@ -1,5 +1,7 @@
+import { useGnBStore } from "src/stores";
+import { Font } from "../Font/template";
 import * as S from "./style";
-import { ROUTES } from "@constants/index";
+import { FONT_STR, ROUTES } from "@constants/index";
 
 export const menus = [
   {
@@ -45,19 +47,51 @@ export const menus = [
   {
     id: 3,
     name: "내 정보",
-    iconActive: undefined,
-    iconDisable: undefined,
+    iconActive: (
+      <img src="/images/my.png" alt="내정보" width={40} height={40} />
+    ),
+    iconDisable: (
+      <img src="/images/my.png" alt="내정보" width={40} height={40} />
+    ),
   },
 ];
 
-const COMPONENTS = {
-  DEFAULT: (
+const GnBComponent = () => {
+  const { activeMenu, setActiveMenu } = useGnBStore();
+
+  return (
     <S.Wrapper>
       {menus.map((menu) => (
-        <S.GnBButton key={menu.id}>{menu.name}</S.GnBButton>
+        <S.GnBButton key={menu.id} onClick={() => setActiveMenu(menu.id)}>
+          <span
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {activeMenu === menu.id ? menu.iconActive : menu.iconDisable}
+          </span>
+          <Font align="center" size={FONT_STR.S14}>
+            <span
+              style={{
+                color:
+                  activeMenu === menu.id && menu.id !== 3
+                    ? "var(--primary-50)"
+                    : "var(--gray-40)",
+              }}
+            >
+              {menu.name}
+            </span>
+          </Font>
+        </S.GnBButton>
       ))}
     </S.Wrapper>
-  ),
+  );
+};
+
+const COMPONENTS = {
+  DEFAULT: <GnBComponent />,
   NONE: <></>,
 };
 

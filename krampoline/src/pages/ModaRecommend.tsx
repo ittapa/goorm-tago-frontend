@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { ConfirmButton } from "@components/recommend";
 import Loading from "@components/common/Loading/template";
-import { Font, FONT_STR } from "@components/common/Font/template";
-import Button from "@components/common/Button/template";
+import { ConfirmButton } from "@components/recommend";
+import { Font } from "@components/common/Font/template";
+import { FONT_STR } from "@constants/index";
 import { speakText, stopText } from "@utils/textToSpeach";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
-function Recommend() {
+function ModaRecommend() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [params] = useSearchParams();
@@ -75,4 +75,4 @@ function Recommend() {
   );
 }
 
-export default Recommend;
+export default ModaRecommend;

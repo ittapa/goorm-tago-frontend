@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Font, FONT_STR } from "@components/common/Font/template";
-import { useSearchParams } from "react-router-dom";
-import { SelectTime, SelectDate } from "@components/reserve";
-import { getTitle } from "@components/reserve/logic";
-import { StepType } from "@components/reserve/type";
+import { SelectDate, SelectTime } from "@components/reserve";
 import { STEP } from "@components/reserve/copy";
+import { StepType } from "@components/reserve/type";
+import { Font } from "@components/common/Font/template";
+import { getTitle } from "@components/schedule/logic";
+import { FONT_STR } from "@constants/index";
+import React, { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
-function Reserve() {
+function ModaReserve() {
   const [params] = useSearchParams();
   // 쿠키에서 dest 정보 매핑해야함: 아들집: 경기도 남양주시... 매핑 필요
   // dest 정보 없으면 에러
@@ -23,7 +24,7 @@ function Reserve() {
   return (
     <>
       <Font align="left" size={FONT_STR.S26}>
-        {getTitle(step as StepType, dest)}
+        {getTitle(dest)}
       </Font>
       {ReserveStep === STEP.DATE && <SelectDate dest={dest} />}
       {ReserveStep === STEP.TIME && <SelectTime dest={dest} />}
@@ -31,4 +32,4 @@ function Reserve() {
   );
 }
 
-export default Reserve;
+export default ModaReserve;

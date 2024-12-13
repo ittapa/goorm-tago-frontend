@@ -4,15 +4,10 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import * as S from "@components/confirm/style";
 import { useEffect } from "react";
 import { speakText, stopText } from "@utils/textToSpeach";
-import { postReserve } from "@apis/axios";
-import Cookies from "js-cookie";
-import { useUserInfo } from "src/stores";
-import { convertDateToKST } from "@utils/convertDateToKST";
 
-function Confirm() {
+function ModaConfirm() {
   const navigate = useNavigate();
   const [params] = useSearchParams();
-  const { userInfo, setUserInfo } = useUserInfo();
   // const dest = params.get("dest") ?? "default"; // 목적지
   // const type = params.get("type") ?? "default"; // group, alone
 
@@ -21,21 +16,8 @@ function Confirm() {
   // 서버 통신 필요 (로딩 화면도 필요)
 
   // 오늘인지 예약인지, 목적지 정보, 결제 금액, 이웃 수, 출발 시간, 날짜 정보,
-  async function handleClickButton() {
-    const result = await postReserve({
-      user_id: String(userInfo.id),
-      starting_point: "제주특별자치도 서귀포시 안덕면 녹차로 15",
-      arrival_point: "제주특별자치도 제주시 한라산길 123",
-      reservation_phone_number: "010-3247-3732",
-      reservation_datetime: convertDateToKST(new Date()),
-    });
-
-    if (result) {
-      // navigate(`/complete`);
-      console.log(result);
-    } else {
-      alert("다시 시도해주세요.");
-    }
+  function handleClickButton() {
+    navigate(`/complete`);
   }
 
   useEffect(() => {
@@ -118,4 +100,4 @@ function Confirm() {
   );
 }
 
-export default Confirm;
+export default ModaConfirm;

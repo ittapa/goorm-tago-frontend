@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { getTitle } from "@components/schedule/logic";
 import { type ScheduleType, SCHEDULE } from "@components/schedule";
 import { Font, FONT_STR } from "@components/common/Font/template";
 import ScheduleButton from "@components/schedule/ScheduleButton/template";
+import { speakText, stopText } from "@utils/textToSpeach";
 
 // 목적지 정보가 서치 파람스에 없을 경우 alert 띄우고 이전 페이지로 이동해야함
 function Schedule() {
@@ -30,6 +31,13 @@ function Schedule() {
         break;
     }
   }
+
+  useEffect(() => {
+    speakText(`${dest}으로 언제 출발할까요?`);
+    return () => {
+      stopText();
+    };
+  }, []);
 
   return (
     <>

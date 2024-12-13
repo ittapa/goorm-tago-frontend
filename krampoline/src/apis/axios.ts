@@ -1,15 +1,59 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "/api",
-  timeout: 1000,
+  baseURL: "https://k28f46a14160fa.user-app.krampoline.com/",
+  timeout: 5000,
   headers: {
     "Content-Type": "application/json",
   },
 });
 
-const getTest = async () => {
-  return await instance.get(`/test`);
+const getUserInfo = async () => {
+  const result = await instance.get(`/api/json-data`);
+  const parsedResult = JSON.stringify(result.data);
+  console.log(parsedResult);
+  return parsedResult;
 };
 
-export { instance, getTest };
+const postReserve = async ({
+  user_id,
+  starting_point,
+  arrival_point,
+  reservation_phone_number,
+  reservation_datetime,
+}: {
+  user_id: string;
+  starting_point: string;
+  arrival_point: string;
+  reservation_phone_number: string;
+  reservation_datetime: string;
+}) => {
+  const result = await instance.post(
+    "https://ec1e-59-8-75-201.ngrok-free.app/reservation/taxi?callType=now",
+    {
+      header: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true,
+        "ngrok-skip-browser-warning": true,
+        Origin: window.location.origin,
+      },
+      params: {
+        user_id,
+        starting_point,
+        arrival_point,
+        reservation_phone_number,
+        reservation_datetime,
+      },
+      withCredentials: true,
+    }
+  );
+
+  if (result.status === 200) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+export { instance, getUserInfo, postReserve };

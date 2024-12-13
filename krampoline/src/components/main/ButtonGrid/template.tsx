@@ -5,8 +5,10 @@ import { FONT_STR } from "@components/common/Font/template";
 
 interface ButtonGridProps {
   buttonList: {
-    id: number;
-    name: string;
+    location_name: string;
+    road_address: string;
+    longitude: string;
+    latitude: string;
   }[];
   handleClickButton: (dest: string) => void;
 }
@@ -14,15 +16,15 @@ interface ButtonGridProps {
 function ButtonGrid({ buttonList, handleClickButton }: ButtonGridProps) {
   return (
     <S.Wrapper>
-      {buttonList.map(({ id, name }) => (
+      {buttonList.map(({ location_name, road_address }) => (
         <Button
-          key={id}
+          key={road_address}
           theme={"sky"}
           font={FONT_STR.M19}
           size={{ width: "full", height: "64px" }}
-          handleClickButton={() => handleClickButton(name)}
+          handleClickButton={() => handleClickButton(road_address)}
         >
-          {name}
+          {location_name}
         </Button>
       ))}
     </S.Wrapper>
