@@ -33,10 +33,7 @@ const postReserve = async ({
     {
       header: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": true,
         "ngrok-skip-browser-warning": true,
-        Origin: window.location.origin,
       },
       params: {
         user_id,
