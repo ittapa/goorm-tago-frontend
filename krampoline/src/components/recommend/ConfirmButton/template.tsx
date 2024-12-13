@@ -12,7 +12,7 @@ function ConfirmButton({
       <Button
         font={FONT_STR.M19}
         theme="sky"
-        size={{ width: "50%", height: "64px" }}
+        size={{ width: "164px", height: "64px" }}
         handleClickButton={() => handleConfirm(false)}
         disabled={true}
         style={{ cursor: "auto" }}
@@ -22,7 +22,7 @@ function ConfirmButton({
       <Button
         font={FONT_STR.M19}
         theme="blue"
-        size={{ width: "50%", height: "64px" }}
+        size={{ width: "164px", height: "64px" }}
         handleClickButton={() => handleConfirm(true)}
       >
         네

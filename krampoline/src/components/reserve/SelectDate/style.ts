@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -75,4 +76,14 @@ export const InfoWrapper = styled.div`
   padding: 20px 0;
   color: var(--gray-60);
   margin-top: -40px;
+`;
+
+export const BottomBtnWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+  bottom: 52px;
+  left: 0;
 `;

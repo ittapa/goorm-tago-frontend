@@ -7,7 +7,10 @@ import LeftDisable from "@assets/svgs/LeftDisable";
 import RightActive from "@assets/svgs/RightActive";
 
 function DatePicker({ dest }: { dest: string }) {
-  const [date, setDate] = useState(new Date());
+  // 내일날짜가 초기값
+  const today = new Date();
+  const tomorrow = new Date(today.setDate(today.getDate() + 1));
+  const [date, setDate] = useState(tomorrow);
   const [day, setDay] = useState(1);
 
   function handleAddDay() {

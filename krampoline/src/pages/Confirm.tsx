@@ -8,6 +8,7 @@ import { postReserve } from "@apis/axios";
 import Cookies from "js-cookie";
 import { useUserInfo } from "src/stores";
 import { convertDateToKST } from "@utils/convertDateToKST";
+import styled from "@emotion/styled";
 
 function Confirm() {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ function Confirm() {
     });
 
     if (result) {
-      // navigate(`/complete`);
+      navigate(`/complete`);
       console.log(result);
     } else {
       alert("다시 시도해주세요.");
@@ -70,7 +71,7 @@ function Confirm() {
           </Font>
         </S.Info>
         <Font align="left" size={FONT_STR.M18}>
-          한국은행 성산지점
+          제주 제주시 한림읍 한림로 300
         </Font>
       </S.InfoWrapper>
 
@@ -107,7 +108,7 @@ function Confirm() {
       </S.ReserveInfo>
 
       <Button
-        font={FONT_STR.B16}
+        font={FONT_STR.M19}
         size={{ width: "full", height: "64px" }}
         style={{ marginTop: "278px" }}
         handleClickButton={handleClickButton}
@@ -117,5 +118,14 @@ function Confirm() {
     </>
   );
 }
+
+export const BottomBtnWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+  bottom: 52px;
+`;
 
 export default Confirm;

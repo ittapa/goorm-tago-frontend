@@ -22,7 +22,7 @@ function ButtonGrid({ buttonList, handleClickButton }: ButtonGridProps) {
           theme={"sky"}
           font={FONT_STR.M19}
           size={{ width: "full", height: "64px" }}
-          handleClickButton={() => handleClickButton(road_address)}
+          handleClickButton={() => handleClickButton(location_name)}
         >
           {location_name}
         </Button>

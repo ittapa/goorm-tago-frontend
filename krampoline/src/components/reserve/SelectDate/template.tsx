@@ -83,15 +83,17 @@ function SelectDate({ dest }: { dest: string }) {
         </Font>
       </S.InfoWrapper>
 
-      <Button
-        style={{ marginTop: "40px" }}
-        font={FONT_STR.M19}
-        theme={"blue"}
-        size={{ width: "full", height: "64px" }}
-        handleClickButton={() => handleNext(dest)}
-      >
-        다음
-      </Button>
+      <S.BottomBtnWrapper>
+        <Button
+          style={{ marginTop: "40px" }}
+          font={FONT_STR.M19}
+          theme={"blue"}
+          size={{ width: "full", height: "64px" }}
+          handleClickButton={() => handleNext(dest)}
+        >
+          다음
+        </Button>
+      </S.BottomBtnWrapper>
     </S.Wrapper>
   );
 }

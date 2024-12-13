@@ -35,7 +35,7 @@ function ModaSchedule() {
             flexDirection: "row",
             justifyContent: "center",
             alignItems: "center",
-            gap: "4px",
+            gap: "11px",
           }}
         >
           다른 곳으로 갈래요 <RightActive />

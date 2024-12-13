@@ -57,7 +57,8 @@ function Main() {
       console.log("user info", response, response);
 
       // 쿠키 설정
-      const zeroOrTwo = Math.random() < 0.5 ? 0 : 1;
+      // const zeroOrTwo = Math.random() < 0.5 ? 0 : 1;
+      const zeroOrTwo = 0;
       const parsed = JSON.parse(response);
       const user = parsed[zeroOrTwo];
       setUserInfo(user);
@@ -101,7 +102,7 @@ function Main() {
                 flexDirection: "row",
                 justifyContent: "center",
                 alignItems: "center",
-                gap: "4px",
+                gap: "11px",
               }}
             >
               다른 곳으로 갈래요 <RightActive />
