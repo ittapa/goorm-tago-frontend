@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://goormtago.qook.io/",
+  baseURL: "https://goormtago.qook.io/",
   timeout: 5000,
   headers: {
     "Content-Type": "application/json",
